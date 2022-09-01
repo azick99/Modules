@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <title>W3.CSS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open Sans">
+    <style>
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Oswald';
+        }
+
+        body {
+            font-family: 'Open Sans';
+        }
+
+        .sidebar {
+            padding: 10px;
+        }
+    </style>
+
+    <body class="w3-light-gray">
+        <!-- Navigation Part for small screen -->
+        <nav class="w3-black w3-bar w3-hide-large w3-hide-medium">
+            <a href="javascript:void(0)"><i class="w3-button w3-bar-item fa fa-bars"
+                    onclick="document.getElementById('mySideBar').style.display = 'block'"></i></a>
+            <a href="#"><i class="w3-button w3-bar-item fa fa-search w3-right"></i></a>
+        </nav>
+        <div class="w3-sidebar w3-animate-left w3-card w3-bar-block w3-top"
+            style="display: none;z-index: 2; width: 30%;" id="mySideBar">
+            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-border"
+                onclick="document.getElementById('mySideBar').style.display = 'none'">
+                Close Menu <i class="fa fa-remove"></i>
+            </a>
+        </div>
+        <!-- Navigation Part for large screen -->
+        <header class="w3-black w3-bar w3-hide-small">
+            <a href="#"><i class="w3-button w3-bar-item fa fa-facebook-official"></i></a>
+            <a href="#"><i class="w3-button w3-bar-item fa fa-instagram"></i></a>
+            <a href="#"><i class="w3-button w3-bar-item fa fa-snapchat"></i></a>
+            <a href="#"><i class="w3-button w3-bar-item fa fa-flickr"></i></a>
+            <a href="#"><i class="w3-button w3-bar-item fa fa-twitter"></i></a>
+            <a href="#"><i class="w3-button w3-bar-item fa fa-linkedin"></i></a>
+            <a href="#"><i class="w3-button w3-bar-item fa fa-search w3-right"></i></a>
+        </header>
+        <!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+        <div class="w3-content" style="max-width: 1600px;">
+            <div class="w3-padding-48 w3-container w3-center w3-white">
+                <h1><b>JANE BLOGLIFE</b></h1>
+                <p>Welcome to the blog of <span class="w3-tag">Jane's world</span></p>
+            </div>
+        </div>
+        <div class="w3-display-container w3-wide" id="home">
+            <img src="../HomePage-img/jane.jpg" alt="Jane" class="w3-image" style="width:1600px;height: 1060;">
+            <div class="w3-display-left  w3-padding-large">
+                <h1 class="w3-text-white">Jane's</h1>
+                <h1 class="w3-jumbo w3-text-white"><b>FASHION BLOG</b></h1>
+                <h6><button class="w3-button w3-hover-opacity-off w3-white w3-opacity w3-large w3-padding-large"
+                        oncanplay="document.getElementById('myModel').style.display = 'block'">SUBSCRIBE</button></h6>
+            </div>
+        </div>
+        <!-- Grid part -->
+        <article class="w3-row-padding w3-container">
+            <div class="w3-col l8">
+                <div class="w3-white w3-padding-16 w3-section w3-container">
+                    <h3 class="w3-center">TITLE HEADING</h3>
+                    <h5 class="w3-center"><b>Title description,</b> <span class="w3-opacity">May 2, 2016</span></h5>
+                    <img src="../HomePage-img/girl_hat.jpg" alt="girl_hat" class="w3-image">
+                    <p class="w3-justify"><b>More Hats!</b>I am crazy about hats these days. Some text about this blog
+                        entry. Fashion fashion and mauris neque quam, fermentum ut nisl vitae, convallis maximus nisl.
+                        Sed mattis nunc id lorem euismod placerat. Vivamus porttitor magna enim, ac accumsan tortor
+                        cursus at. Phasellus sed ultricies mi non congue ullam corper. Praesent tincidunt sedtellus ut
+                        rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non
+                        fringilla.</p>
+                    <p class="w3-justify">Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+                        adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                        minim veniam, quis nostrud exercitation ullamco.</p>
+                    <p class="w3-left"><button class="w3-button w3-border" onclick="likeButton('likeThis')"><i
+                                class="fa fa-thumbs-o-up" id="likeThis"></i> <b>Like</b></button></p>
+                    <p class="w3-right"><button class="w3-black w3-button" onclick="showComment('Comments')">
+                            <b>Replies </b> <span class="w3-tag w3-white">1</span>
+                        </button></p>
+                        <div id="Comments" class="w3-container">
+                            <hr>
+                        </div>
+                </div>
+            </div>
+        </article>
+        <script>
+         
+         const liked = document.getElementById(id)
+            function likeButton(id) {
+                if (liked.className.indexOf('fa fa-thumbs-o-up') == -1) {
+                    liked.className += 'fa fa-thumbs-o-up';
+                }else{
+                    liked.className = liked.className.replace('fa fa-thumbs-o-up', 'fa fa-thumbs-up')
+                }
+                }
+                
+            function showComment(id) {
+                const commentBlock = liked
+                if (commentBlock.className.indexOf('w3-show') == -1) {
+                    commentBlock.className += ' w3-show';
+                }else{
+                    commentBlock.className = commentBlock.className.replace(' w3-show', '')
+                }
+                }
+        </script>
+    </body>
+
+</html>
